@@ -15,8 +15,11 @@
 
 function twoArrayObject(keys, values) {
     let resultObj = {};
+    // can we be more specific on name here? 
 
     for (let i = 0; i < keys.length; i++) {
+        // could do ternary or OR evaluator here to clean up
+        
         if (values[i] === undefined) {
             resultObj[keys[i]] = null;
         }

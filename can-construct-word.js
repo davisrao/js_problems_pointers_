@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // add whatever parameters you deem necessary & write doc comment
 
@@ -11,33 +11,41 @@
  *  if the frequency in the second string is less than the first, return false 
  * else return true
  */
- function createCounterFromString (str){
-     let stringCounter = new Map();
 
-     for(let letter of str){
+
+
+
+
+
+function createCounterFromString(str) {
+    // change createcounterfromstring name to be more general
+    let stringCounter = new Map();
+    //could just call this frequency count
+
+    for (let letter of str) {
         let count = stringCounter.get(letter) || 0;
         stringCounter.set(letter, count + 1);
-     }
-     console.log("this is the string counter: ", stringCounter);
+    }
+    console.log("this is the string counter: ", stringCounter);
     return stringCounter;
- }
+}
 
 
 function canConstructWord(string1, string2) {
+    // think about how these variables are made - string1 / string 2 might not be best
     let map1 = createCounterFromString(string1);
     let map2 = createCounterFromString(string2);
+    //be more specific with these names
 
-    if(!string2){
+    if (!string2) {
         return false
     }
 
-
-
-    for(let letter of map1.keys()){
-        if(map2.get(letter) === -1){
+    for (let letter of map1.keys()) {
+        if (map2.get(letter) === -1) {
             return false
         }
-        else if(map1.get(letter) > map2.get(letter)){
+        else if (map1.get(letter) > map2.get(letter)) {
             return false
         }
     }

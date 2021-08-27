@@ -16,22 +16,22 @@
 
 
 function averagePair(arr1, targetValue) {
-
+    //choose different name for arr1 --- numbers? integers?
     let leftPointer = 0;
     let rightPointer = arr1.length - 1;
 
-    while (leftPointer < rightPointer){
-        let pointerAvg = (arr1[leftPointer] + arr1[rightPointer])/2;
-        if (pointerAvg < targetValue){
+    while (leftPointer < rightPointer) {
+        let pointerAvg = (arr1[leftPointer] + arr1[rightPointer]) / 2;
+        if (pointerAvg < targetValue) {
             leftPointer += 1;
         }
-        else if (pointerAvg > targetValue){
+        else if (pointerAvg > targetValue) {
             rightPointer -= 1;
         }
-        else{
+        else {
             return true;
         }
     }
-return false
+    return false
 
 }
